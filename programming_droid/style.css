@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    scroll-behavior: smooth;
+    cursor: none;
+}
+
+header{
+    background-image: url(./assets/features-3.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 30rem;
+}
+
+header .top{
+    background-color: white;
+    width: 100%;
+    height: 30rem;
+    background: rgba(223, 221, 121, 0.4);
+}
+
+header > .top > .all{
+    /* margin-top: 15%; */
+    width: 450px;
+    margin-left: 20rem;
+}
+
+.animateUp{
+    animation-name: animateUp;
+    animation-duration: 3s;
+    transition: 2s;
+    animation-iteration-count: 1;
+}
+
+.animateDown{
+    animation-name: animateDown;
+    animation-duration: 3s;
+    transition: 2s;
+    animation-iteration-count: 1;
+}
+
+
+/* media queries */
+@media screen and (max-width:600px){
+    header > .top > .all{
+        width: 350px;
+        margin-left: 2rem;
+    }
+    .counts{
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.cursor{
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnim .5s infinite alternate;
+    pointer-events: none;
+    
+}
+.cursor::after {
+    content: "";
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    border: 8px solid gray;
+    border-radius: 50%;
+    opacity: .5;
+    top: -8px;
+    left: -8px;
+    animation: cursorAnim2 .5s infinite alternate;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+        filter: invert(0.5);
+    }
+    to {
+        transform: scale(.7);
+        filter: invert(0.5);
+    }
+}
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+        filter: invert(0.5);
+    }
+    to {
+        transform: scale(.4);
+        filter: invert(0.5);
+    }
+}
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+        filter: invert(0.5);
+    }
+    50% {
+        transform: scale(3);
+        filter: invert(0.5);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+        filter: invert(0.5);
+    }
+}
+
+.expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid red;
+    filter: invert(0.5);
+}
+
+p {
+  color: white;
+  font-family: 'arial';
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.4em;
+  
+  a {
+    color: teal;
+  }
+}
+
+/* keyframes */
+@keyframes animateUp{
+    0%, 10% {opacity: 0.1; margin-top:-10rem;}
+    10%, 20% {opacity: 0.3; margin-top:-8rem;}
+    20%, 30% {opacity: 0.5; margin-top:-6rem;}
+    30%, 45% {opacity: 0.7; margin-top:-4rem;}
+    45%, 70% {opacity: 0.8; margin-top:-2rem;}
+    70%, 90% {opacity: 0.9; margin-top:-1rem;}
+    90%, 1000% {opacity: 1; margin-top:0;}
+}

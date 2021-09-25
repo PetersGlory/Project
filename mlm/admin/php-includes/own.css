@@ -1,0 +1,18 @@
+.box-model{
+	width:200px;
+	height: 200px;
+	background: rgb(9, 241, 9);
+	border-radius: 20px;
+	display: inline-block;
+	text-align: center;
+	padding: 20px;
+}
+.box-model:hover{
+	background: #02e458;
+}
+.box-model a{
+	color: white;
+}
+.box-model a:hover{
+	text-decoration: none;
+}
